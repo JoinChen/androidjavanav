@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.bksx.android_java_nav.viewmodel.TwoWayBindingViewModel" />
+
+        <variable
+            name="model"
+            type="com.bksx.android_java_nav.model.NameModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btn_add_student"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add a Student"
+            android:textAllCaps="false" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_do_work"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Do Work"
+                android:textAllCaps="false" />
+
+            <EditText
+                android:id="@+id/etName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:text="@={viewModel.name}" />
+
+<!--            <TextView-->
+<!--                android:id="@+id/tvTestTwoWayBind"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="@{model.name}"/>-->
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ToPaging"
+                android:id="@+id/btnToPaging"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Paging paged"
+                android:textAllCaps="false"
+                android:id="@+id/btnToPagingPaged"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Paging item_keyed"
+                android:textAllCaps="false"
+                android:id="@+id/btnToPagingItemKeyed"/>
+        </LinearLayout>
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_student"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+</layout>
